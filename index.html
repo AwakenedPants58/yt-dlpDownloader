@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Converter</title>
+    <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>YouTube Converter</h1>
+        
+        <div class="input-group">
+            <input type="text" id="youtubeUrl" placeholder="Enter link here...">
+            <div id="urlError" class="error">Please enter a valid YouTube URL</div>
+        </div>
+
+        <img id="thumbnail" alt="Video thumbnail">
+        <div id="command" class="hidden"></div>
+        <div class="copied-tooltip" id="copiedTooltip">Command copied!</div>
+    </div>
+
+    <div class="modal-overlay" id="formatModal">
+        <div class="modal">
+            <div class="modal-title">Select Media Type</div>
+            <div class="format-grid">
+                <div class="format-section" onclick="showFormatOptions('video')">
+                    <div class="format-icon">🎥</div>
+                    <div class="format-name">Video</div>
+                </div>
+                <div class="format-section" onclick="showFormatOptions('audio')">
+                    <div class="format-icon">🎵</div>
+                    <div class="format-name">Audio</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="formatOptionsModal">
+        <div class="modal">
+            <div class="modal-title">Select Format</div>
+            <div class="format-list" id="formatList"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
